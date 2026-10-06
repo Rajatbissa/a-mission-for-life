@@ -117,36 +117,34 @@ function header() {
   const photoHref = home ? "#photos" : "index.html#photos";
   return `<a class="skip" href="${feedHref}">${esc(t("skip"))}</a>
   <header class="topbar">
-    <a class="brand" href="index.html">
-      <span class="mark"><img src="assets/logo.png" alt=""></span>
-      <span class="brand-text"><strong>A Mission <em>For Life</em></strong><small>FOUNDATION</small></span>
-    </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="${feedHref}">${esc(t("feed"))}</a>
-      <a href="${campHref}">${esc(t("camps"))}</a>
-      <a href="${photoHref}">${esc(t("photos"))}</a>
-    </nav>
-    <div class="lang" role="group" aria-label="${esc(t("langLabel"))}">
-      <button type="button" data-lang="hi" aria-pressed="${lang === "hi"}">हिंदी</button>
-      <button type="button" data-lang="en" aria-pressed="${lang === "en"}">EN</button>
+    <div class="bbr-bar">
+      <a class="bbr-link" href="https://boostbyrajat.onrender.com/" target="_blank" rel="noopener">
+        <img src="assets/bbr-logo.png" alt="BBR BoostByRajat">
+      </a>
+      <p class="head-copy">${esc(t("copy"))}</p>
+    </div>
+    <div class="site-bar">
+      <a class="brand" href="index.html">
+        <span class="mark"><img src="assets/logo.png" alt=""></span>
+        <span class="brand-text"><strong>A Mission <em>For Life</em></strong><small>FOUNDATION</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="${feedHref}">${esc(t("feed"))}</a>
+        <a href="${campHref}">${esc(t("camps"))}</a>
+        <a href="${photoHref}">${esc(t("photos"))}</a>
+      </nav>
+      <div class="lang" role="group" aria-label="${esc(t("langLabel"))}">
+        <button type="button" data-lang="hi" aria-pressed="${lang === "hi"}">हिंदी</button>
+        <button type="button" data-lang="en" aria-pressed="${lang === "en"}">EN</button>
+      </div>
     </div>
   </header>`;
-}
-
-function groupRail() {
-  const groups = ["A+", "A−", "B+", "B−", "O+", "O−", "AB+", "AB−"];
-  const items = groups.map((group) => `<span class="mini"><i></i><b>${esc(group)}</b></span>`).join("");
-  return `<div class="group-rail" aria-label="Blood groups">${items}</div>`;
 }
 
 function footer() {
   return `<footer class="site-footer">
     <div><strong>${esc(SITE.name)}</strong><div>${esc(SITE.tagline)}</div></div>
     <div>${esc(t("footer"))}</div>
-    <a class="bbr-plate" href="https://boostbyrajat.onrender.com/" target="_blank" rel="noopener">
-      <img src="assets/bbr-mark.svg" alt="BBR">
-      <span><strong>BBR</strong><em>${esc(t("copy"))}</em></span>
-    </a>
   </footer>`;
 }
 
@@ -175,7 +173,6 @@ function renderHome() {
           <a class="btn btn-green" href="#feed">${esc(t("seeFeed"))}</a>
           <a class="btn btn-wa" href="${esc(waHref())}" target="_blank" rel="noopener">${esc(t("whatsapp"))}</a>
         </div>
-        ${groupRail()}
       </div>
       <a class="next-pill" href="camp.html?id=${esc(upcoming.id)}">
         <span>${esc(t("upcoming"))}</span>
@@ -203,7 +200,6 @@ function renderCamp() {
   return `${banner()}${header()}
   <main class="page shell">
     <a class="back" href="index.html#camps">${esc(t("back"))}</a>
-    ${groupRail()}
     <div class="camp-wrap">
       <section class="date-card">
         <p class="meta"><span class="pill">${esc(t("camp"))}</span><span class="pill pill-gold">${esc(t("sample"))}</span></p>
