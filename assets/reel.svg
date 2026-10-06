@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280">
+  <rect width="720" height="1280" fill="#10243a"/>
+  <circle cx="560" cy="240" r="140" fill="#e2b325"/>
+  <path d="M0 860 C160 760 240 980 420 900 C560 840 640 980 720 920 L720 1280 L0 1280 Z" fill="#1f5c28"/>
+  <circle cx="360" cy="560" r="92" fill="none" stroke="#f4f0e6" stroke-width="10"/>
+  <path d="M332 500 L332 620 L430 560 Z" fill="#f4f0e6"/>
+  <text x="56" y="160" fill="#f4f0e6" font-family="Georgia, serif" font-size="54">Reel</text>
+</svg>
