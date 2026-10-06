@@ -482,6 +482,22 @@ html[lang="en"] h2 {
   font-size: 0.9rem;
 }
 .site-footer strong { color: #12263f; }
+.bbr-brand {
+  width: 100%;
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(18, 38, 63, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bbr-brand strong {
+  font-family: Manrope, sans-serif;
+  letter-spacing: 0.18em;
+  font-size: 1rem;
+}
+.bbr-brand span { color: #5d6c7c; font-size: 0.85rem; letter-spacing: 0; font-weight: 600; }
+.group-rail { display: none; }
 
 dialog {
   border: 0;
@@ -524,16 +540,42 @@ dialog p { line-height: 1.6; color: var(--muted); }
 
 @media (max-width: 1099px) {
   .hero-plate, .next-pill, .date-card, .reel-frame { transform: none; animation: none; }
-  .fall { display: none; }
 }
 
 @media (max-width: 979px) {
-  .bubble, .fall { display: none; }
-  .b3, .b5, .b7 { display: grid; }
-  .b3 { width: 42px; height: 42px; right: -8px; top: 92px; left: auto; }
-  .b5 { width: 50px; height: 50px; right: -10px; bottom: 12px; top: auto; left: auto; }
-  .b7 { width: 46px; height: 46px; left: -10px; bottom: 64px; top: auto; }
-  .b1 .grp, .b3 .grp, .b5 .grp, .b7 .grp { font-size: 0.68rem; }
+  .group-rail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    margin-top: 18px;
+  }
+  .mini {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+  .mini i {
+    position: absolute;
+    inset: 4px;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0 8%, transparent 18%),
+      radial-gradient(circle at 45% 50%, #ff5d72 0%, #d01232 50%, #7a0e22 82%);
+    box-shadow: 0 8px 14px rgba(142, 18, 40, 0.22);
+  }
+  .mini b {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-family: Manrope, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .bubble, .fall { display: none !important; }
   .shell { width: min(1100px, calc(100% - 28px)); }
   .hero { padding-top: 22px; gap: 16px; }
   .hero-plate { width: min(280px, 100%); padding: 12px 12px 4px; border-radius: 28px; }

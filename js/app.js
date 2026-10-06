@@ -133,10 +133,17 @@ function header() {
   </header>`;
 }
 
+function groupRail() {
+  const groups = ["A+", "A−", "B+", "B−", "O+", "O−", "AB+", "AB−"];
+  const items = groups.map((group) => `<span class="mini"><i></i><b>${esc(group)}</b></span>`).join("");
+  return `<div class="group-rail" aria-label="Blood groups">${items}</div>`;
+}
+
 function footer() {
   return `<footer class="site-footer">
     <div><strong>${esc(SITE.name)}</strong><div>${esc(SITE.tagline)}</div></div>
     <div>${esc(t("footer"))}</div>
+    <div class="bbr-brand"><strong>BBR</strong><span>${esc(t("copy"))}</span></div>
   </footer>`;
 }
 
@@ -165,6 +172,7 @@ function renderHome() {
           <a class="btn btn-green" href="#feed">${esc(t("seeFeed"))}</a>
           <a class="btn btn-wa" href="${esc(waHref())}" target="_blank" rel="noopener">${esc(t("whatsapp"))}</a>
         </div>
+        ${groupRail()}
       </div>
       <a class="next-pill" href="camp.html?id=${esc(upcoming.id)}">
         <span>${esc(t("upcoming"))}</span>
@@ -192,6 +200,7 @@ function renderCamp() {
   return `${banner()}${header()}
   <main class="page shell">
     <a class="back" href="index.html#camps">${esc(t("back"))}</a>
+    ${groupRail()}
     <div class="camp-wrap">
       <section class="date-card">
         <p class="meta"><span class="pill">${esc(t("camp"))}</span><span class="pill pill-gold">${esc(t("sample"))}</span></p>
