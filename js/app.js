@@ -117,34 +117,34 @@ function header() {
   const photoHref = home ? "#photos" : "index.html#photos";
   return `<a class="skip" href="${feedHref}">${esc(t("skip"))}</a>
   <header class="topbar">
-    <div class="bbr-bar">
-      <a class="bbr-link" href="https://boostbyrajat.onrender.com/" target="_blank" rel="noopener">
-        <img src="assets/bbr-logo.png" alt="BBR BoostByRajat">
-      </a>
-      <p class="head-copy">${esc(t("copy"))}</p>
-    </div>
-    <div class="site-bar">
-      <a class="brand" href="index.html">
-        <span class="mark"><img src="assets/logo.png" alt=""></span>
-        <span class="brand-text"><strong>A Mission <em>For Life</em></strong><small>FOUNDATION</small></span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="${feedHref}">${esc(t("feed"))}</a>
-        <a href="${campHref}">${esc(t("camps"))}</a>
-        <a href="${photoHref}">${esc(t("photos"))}</a>
-      </nav>
-      <div class="lang" role="group" aria-label="${esc(t("langLabel"))}">
-        <button type="button" data-lang="hi" aria-pressed="${lang === "hi"}">हिंदी</button>
-        <button type="button" data-lang="en" aria-pressed="${lang === "en"}">EN</button>
-      </div>
+    <a class="brand" href="index.html">
+      <span class="mark"><img src="assets/logo.png" alt=""></span>
+      <span class="brand-text"><strong>A Mission <em>For Life</em></strong><small>FOUNDATION</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="${feedHref}">${esc(t("feed"))}</a>
+      <a href="${campHref}">${esc(t("camps"))}</a>
+      <a href="${photoHref}">${esc(t("photos"))}</a>
+    </nav>
+    <div class="lang" role="group" aria-label="${esc(t("langLabel"))}">
+      <button type="button" data-lang="hi" aria-pressed="${lang === "hi"}">हिंदी</button>
+      <button type="button" data-lang="en" aria-pressed="${lang === "en"}">EN</button>
     </div>
   </header>`;
 }
 
 function footer() {
   return `<footer class="site-footer">
-    <div><strong>${esc(SITE.name)}</strong><div>${esc(SITE.tagline)}</div></div>
-    <div>${esc(t("footer"))}</div>
+    <div class="foot-note">
+      <div><strong>${esc(SITE.name)}</strong><div>${esc(SITE.tagline)}</div></div>
+      <div>${esc(t("footer"))}</div>
+    </div>
+    <div class="bbr-bar">
+      <a class="bbr-link" href="https://boostbyrajat.onrender.com/" target="_blank" rel="noopener">
+        <img src="assets/bbr-logo.png" alt="BBR BoostByRajat">
+      </a>
+      <p class="head-copy">${esc(t("copy"))}</p>
+    </div>
   </footer>`;
 }
 
