@@ -143,7 +143,10 @@ function footer() {
   return `<footer class="site-footer">
     <div><strong>${esc(SITE.name)}</strong><div>${esc(SITE.tagline)}</div></div>
     <div>${esc(t("footer"))}</div>
-    <div class="bbr-brand"><strong>BBR</strong><span>${esc(t("copy"))}</span></div>
+    <a class="bbr-plate" href="https://boostbyrajat.onrender.com/" target="_blank" rel="noopener">
+      <img src="assets/bbr-mark.svg" alt="BBR">
+      <span><strong>BBR</strong><em>${esc(t("copy"))}</em></span>
+    </a>
   </footer>`;
 }
 
